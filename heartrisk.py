@@ -6,7 +6,8 @@ import matplotlib.pyplot as plt
 st.header("Heart Disease Prediction Analysis")
 st.write('The dataset is downloaded from [Kaggle](https://www.kaggle.com) for use in this analysis.')
 st.write("In this dataset, there are many cases  with their ASCVDs."
-df = pd.read_csv("heartRisk.csv")
+url = https://github.com/sitisyafirah/FirstApp.py/blob/fd5c9fe6dad29a708ceefb9c60a18ad7171fbc61/heartRisk.csv
+df = pd.read_csv(url)
 st.write(df)
 
 option = st.sidebar.selectbox(
