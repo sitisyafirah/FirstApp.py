@@ -6,8 +6,7 @@ import matplotlib.pyplot as plt
 st.header("Heart Disease Prediction Analysis")
 st.write('The dataset is downloaded from [Kaggle](https://www.kaggle.com) for use in this analysis.')
 st.write("In this dataset, there are many cases  with their ASCVDs."
-st.write('Before you continue, please read the [terms and conditions](https://www.gnu.org/licenses/gpl-3.0.en.html)')
-show = st.checkbox('I agree the terms and conditions')
+show = st.checkbox('Click to continue')
 if show:
         df = pd.read_csv("heartRisk.csv")
         st.write(df)
