@@ -5,8 +5,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 st.header("Heart Disease Prediction Analysis")
 st.write("In this dataset, there are many cases  with their ASCVDs."
-st.write("""Data obtained from the [HeartRisk](https://raw.githubusercontent.com/sitisyafirah/FirstApp.py/main/heartRisk.csv""")
-
+         
 st.sidebar.header('User Input Features')
 
 st.sidebar.markdown("""
