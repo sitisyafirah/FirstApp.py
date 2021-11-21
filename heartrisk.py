@@ -3,6 +3,7 @@ import numpy as np
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
+
 st.header("Heart Disease Prediction Analysis")
 st.write("In this dataset, there are many cases  with their ASCVDs."
          
