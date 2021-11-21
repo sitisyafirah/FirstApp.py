@@ -7,7 +7,7 @@ st.header("Heart Disease Prediction Analysis")
 st.write('The dataset is downloaded from [Kaggle](https://www.kaggle.com) for use in this analysis.')
 st.write("In this dataset, there are many cases  with their ASCVDs."
 df = pd.read_csv("heartRisk.csv")
-st.write(df)
+st.table(df)
 
 option = st.sidebar.selectbox(
     'Select count plot'
