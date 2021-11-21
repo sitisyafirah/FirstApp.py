@@ -4,11 +4,23 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 st.header("Heart Disease Prediction Analysis")
-st.write('The dataset is downloaded from [Kaggle](https://www.kaggle.com) for use in this analysis.')
 st.write("In this dataset, there are many cases  with their ASCVDs."
-df = pd.read_csv("heartRisk.csv")
-st.table(df)
+st.write("Data obtained from the [HeartRiskKaggle](https://raw.githubusercontent.com/sitisyafirah/FirstApp.py/main/heartRisk.csv)
 
+st.sidebar.header('User Input Features')
+
+st.sidebar.markdown("""
+[Example CSV input file](https://raw.githubusercontent.com/sitisyafirah/FirstApp.py/main/heartRisk.csv)
+""")
+
+# Collects user input features into dataframe
+uploaded_file = st.sidebar.file_uploader("Upload your input CSV file", type=["csv"])
+if uploaded_file is not None:
+    df = pd.read_csv(uploaded_file, sep = ',')
+    st.table(df)
+else
+    st.write("Please upload again")
+         
 option = st.sidebar.selectbox(
     'Select count plot'
      ['Age','Cholestrol','HDL'])
