@@ -6,10 +6,8 @@ import matplotlib.pyplot as plt
 st.header("Heart Disease Prediction Analysis")
 st.write('The dataset is downloaded from [Kaggle](https://www.kaggle.com) for use in this analysis.')
 st.write("In this dataset, there are many cases  with their ASCVDs."
-show = st.checkbox('Click to continue')
-if show:
-        df = pd.read_csv("heartRisk.csv")
-        st.write(df)
+df = pd.read_csv("heartRisk.csv")
+st.write(df)
 
 option = st.sidebar.selectbox(
     'Select count plot'
