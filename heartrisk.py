@@ -73,11 +73,11 @@ elif option=='CALORIE CALCULATOR':
        goals = st.text_input("Do you want to lose, maintain, or gain weight: ")
 
     	if goals == 'lose':
-            calories = activity_level - 500
+            #calories = activity_level - 500
     	elif goals == 'maintain':
-            calories = activity_level
+            #calories = activity_level
     	elif goals == 'gain':
-            gain = st.text_input("Gain 1 or 2 pounds per week? Enter 1 or 2: ""))
+            gain = st.text_input("Gain 1 or 2 pounds per week? Enter 1 or 2: ")
       	
         if gain == 1: 
             calories = activity_level + 500
