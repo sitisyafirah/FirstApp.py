@@ -26,11 +26,11 @@ elif option=='BMI CALCULATOR':
       st.write('Your BMi is: ',BMI)
       if BMI <= 18.5:
     	st.write("You are underweight.")
-		elif BMI <= 24.9:
+      elif BMI <= 24.9:
     	st.write("You are healthy.")
-		elif BMI <= 29.9:
+      elif BMI <= 29.9:
     	st.write("You are overweight.")
-		else:
+      else:
     	st.write("You are obese.")
       
 elif option=='CALORIE CALCULATOR':
