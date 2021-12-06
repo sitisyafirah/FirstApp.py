@@ -41,7 +41,7 @@ elif option=='CALORIE CALCULATOR':
        gender = st.text_input("What is your gender (male/female): ")
        weight = st.number_input("What is your weight: ")
        height = st.number_input("What is your height in inches: ")
-
+       bmr_result = float(bmr_result)
        if gender == 'male':
           bmr_result = 66 + (6.2*height) + (12.7*weight) - (6.76*age)
 	
