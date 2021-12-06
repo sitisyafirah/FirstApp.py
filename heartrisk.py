@@ -35,10 +35,10 @@ elif option=='BMI CALCULATOR':
       
 elif option=='CALORIE CALCULATOR':
       def user_info():
-    	   age = st.number_input("What is your age: ")
-    	   gender = st.text_input("What is your gender (male/female): ")
-    	   weight = st.number_input("What is your weight: ")
-   	   height = st.number_input("What is your height in inches: ")
+    	age = st.number_input("What is your age: ")
+        gender = st.text_input("What is your gender (male/female): ")
+    	weight = st.number_input("What is your weight: ")
+   	height = st.number_input("What is your height in inches: ")
     
           if gender == 'male':
               c1 = 66
