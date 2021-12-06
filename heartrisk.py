@@ -22,6 +22,7 @@ if option=='CALENDAR':
 elif option=='BMI CALCULATOR':
       height = st.number_input("Enter your height in m: ")
       weight = st.number_input("Enter your weight in kg: ")
+	
       BMI = weight/((height)**2)
       st.write('Your BMi is: ',BMI)
       if BMI <= 18.5:
@@ -39,23 +40,26 @@ elif option=='CALORIE CALCULATOR':
        gender = st.text_input("What is your gender (male/female): ")
        weight = st.number_input("What is your weight: ")
        height = st.number_input("What is your height in inches: ")
-    
+
        if gender == 'male':
           c1 = 66
           hm = 6.2 * height
           wm = 12.7 * weight
           am = 6.76 * age
+          bmr_result = c1 + hm + wm - am
+	
        elif gender == 'female':
           c1 = 655.1
           hm = 4.35 * height
           wm = 4.7 * weight
           am = 4.7 * age
+	  bmr_result = c1 + hm + wm - am
         #BMR = 665 + (9.6 X 69) + (1.8 x 178) – (4.7 x 27)
        
 
     #def calculate_activity(bmr_result): 
        activity_level = st.text_input("What is your activity level (none, light, moderate, heavy, or extreme): ")
-       bmr_result = c1 + hm + wm - am
+       
        if activity_level == 'none':
             activity_level = 1.2 * bmr_result
        elif activity_level == 'light':
