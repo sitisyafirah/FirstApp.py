@@ -6,8 +6,8 @@ import math
 
 st.header("My first Streamlit App")
 st.title("Let's Count")
-st.write('Before you continue, please read the [terms and conditions](I promise to stay healthy everyday')
-show = st.checkbox('I agree the terms and conditions')
+st.write('Before you continue, please tick below checkbox')
+show = st.checkbox('I promise to stay healthy everyday')
 if show:
     st.write('Welcome to Lets Count')
 
