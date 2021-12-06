@@ -91,10 +91,8 @@ elif option=='CALORIE CALCULATOR':
       	
       if gain == 1: 
            calories = activity_level + 500
-           st.write('in order to ', goals, 'weight, your daily caloric goals should be', calories, '!')
       elif gain == 2:
            calories = activity_level + 1000
-	   st.write('in order to ', goals, 'weight, your daily caloric goals should be', calories, '!')
-
-       #st.write('in order to ', goals, 'weight, your daily caloric goals should be', calories, '!')
+	  
+      st.write('in order to ', goals, 'weight, your daily caloric goals should be', calories, '!')
 		#gain_or_lose(calculate_activity(user_info()))
