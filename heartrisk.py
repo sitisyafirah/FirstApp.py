@@ -25,27 +25,27 @@ elif option=='BMI CALCULATOR':
       BMI = weight / (height/100)**2 #height is divided by 100 to convert centimeter to meter
       st.write('Your BMi is: ',BMI)
       if BMI <= 18.5:
-    	st.write("You are underweight.")
+      st.write("You are underweight.")
       elif BMI <= 24.9:
-    	st.write("You are healthy.")
+      st.write("You are healthy.")
       elif BMI <= 29.9:
-    	st.write("You are overweight.")
+      st.write("You are overweight.")
       else:
-    	st.write("You are obese.")
+      st.write("You are obese.")
       
 elif option=='CALORIE CALCULATOR':
-    def user_info():
+      def user_info():
     	age = st.number_input("What is your age: ")
     	gender = st.text_input("What is your gender (male/female): ")
     	weight = st.number_input("What is your weight: ")
    	height = st.text_input("What is your height in inches: ")
     
-    if gender == 'male':
+      if gender == 'male':
         c1 = 66
         hm = 6.2 * height
         wm = 12.7 * weight
         am = 6.76 * age
-    elif gender == 'female':
+      elif gender == 'female':
         c1 = 655.1
         hm = 4.35 * height
         wm = 4.7 * weight
