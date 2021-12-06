@@ -38,20 +38,20 @@ elif option=='CALORIE CALCULATOR':
     	   age = st.number_input("What is your age: ")
     	   gender = st.text_input("What is your gender (male/female): ")
     	   weight = st.number_input("What is your weight: ")
-   	   height = st.text_input("What is your height in inches: ")
+   	   height = st.number_input("What is your height in inches: ")
     
-      if gender == 'male':
-        c1 = 66
-        hm = 6.2 * height
-        wm = 12.7 * weight
-        am = 6.76 * age
-      elif gender == 'female':
-        c1 = 655.1
-        hm = 4.35 * height
-        wm = 4.7 * weight
-        am = 4.7 * age
+          if gender == 'male':
+              c1 = 66
+              hm = 6.2 * height
+              wm = 12.7 * weight
+              am = 6.76 * age
+          elif gender == 'female':
+              c1 = 655.1
+              hm = 4.35 * height
+              wm = 4.7 * weight
+              am = 4.7 * age
         #BMR = 665 + (9.6 X 69) + (1.8 x 178) – (4.7 x 27)
-        bmr_result = c1 + hm + wm - am
+          bmr_result = c1 + hm + wm - am
         return(int(bmr_result))
 
     def calculate_activity(bmr_result): 
