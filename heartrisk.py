@@ -85,7 +85,7 @@ elif option=='CALORIE CALCULATOR':
            st.write('in order to ', goals, 'weight, your daily caloric goals should be', calories, '!')
       elif goals == 'maintain':
            calories = activity_level
-            st.write('in order to ', goals, 'weight, your daily caloric goals should be', calories, '!')
+           st.write('in order to ', goals, 'weight, your daily caloric goals should be', calories, '!')
       elif goals == 'gain':
            gain = st.text_input("Gain 1 or 2 pounds per week? Enter 1 or 2: ")
       	
