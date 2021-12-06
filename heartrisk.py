@@ -46,14 +46,14 @@ elif option=='CALORIE CALCULATOR':
           hm = 6.2*height
           wm = 12.7*weight
           am = 6.76*age
-          bmr_result = float(c1 + hm + wm - am)
+          bmr_result = float(c1+hm+ wm-am)
 	
        elif gender == 'female':
           c1 = 655.1
           hm = 4.35 * height
           wm = 4.7 * weight
           am = 4.7 * age
-	  bmr_result = float(c1 + hm + wm - am)
+	  bmr_result = float(c1+hm+wm-am)
         #BMR = 665 + (9.6 X 69) + (1.8 x 178) – (4.7 x 27)
        
 
