@@ -15,7 +15,7 @@ option = st.sidebar.selectbox('Select one symbol', ( 'CALENDAR', 'BMI CALCULATOR
 
 if option=='CALENDAR':
     today = datetime.date.today()
-    start_date = st.date_input('Start date', today)
+    start_date = st.date_input('Today date', today)
     st.write(start_date)
 
 #BMI CALCULATOR
@@ -43,7 +43,7 @@ elif option=='CALORIE CALCULATOR':
        height = st.number_input("What is your height in inches: ")
        bmr_result = float(bmr_result)
        if gender == 'male':
-          bmr_result = 66 + (6.2*height) + (12.7*weight) - (6.76*age)
+          bmr_result = 66 + (6.2 * height) + (12.7 * weight) - (6.76 * age)
        elif gender == 'female':
 	  bmr_result = 655.1 + (4.35 * height) + (4.7 * weight) - (4.7 * age)
         #BMR = 665 + (9.6 X 69) + (1.8 x 178) – (4.7 x 27)
