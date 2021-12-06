@@ -22,7 +22,7 @@ if option=='CALENDAR':
 elif option=='BMI CALCULATOR':
       height = st.number_input("Enter your height in m: ")
       weight = st.number_input("Enter your weight in kg: ")
-      BMI = weight/(height)**2
+      BMI = weight/((height)**2)
       st.write('Your BMi is: ',BMI)
       if BMI <= 18.5:
       	st.write("You are underweight.")
