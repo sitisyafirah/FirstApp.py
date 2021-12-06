@@ -21,7 +21,7 @@ if option=='CALENDAR':
 
 elif option=='BMI CALCULATOR':
       height = st.number_input("Enter your height in cm: ")
-      weight = st.number_input("Enter your weight in kg: "))
+      weight = st.number_input("Enter your weight in kg: ")
       BMI = weight / (height/100)**2 #height is divided by 100 to convert centimeter to meter
       st.write('Your BMi is: ',BMI)
       if BMI <= 18.5:
