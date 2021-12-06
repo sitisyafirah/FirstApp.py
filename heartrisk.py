@@ -22,7 +22,7 @@ if option=='CALENDAR':
 elif option=='BMI CALCULATOR':
       height = st.number_input("Enter your height in m: ")
       weight = st.number_input("Enter your weight in kg: ")
-      BMI = weight / (height)**2 #height is divided by 100 to convert centimeter to meter
+      BMI = weight/(height)**2
       st.write('Your BMi is: ',BMI)
       if BMI <= 18.5:
       	st.write("You are underweight.")
@@ -51,11 +51,11 @@ elif option=='CALORIE CALCULATOR':
           wm = 4.7 * weight
           am = 4.7 * age
         #BMR = 665 + (9.6 X 69) + (1.8 x 178) – (4.7 x 27)
-       bmr_result = c1 + hm + wm - am
+       
 
     #def calculate_activity(bmr_result): 
        activity_level = st.text_input("What is your activity level (none, light, moderate, heavy, or extreme): ")
-
+       bmr_result = c1 + hm + wm - am
        if activity_level == 'none':
             activity_level = 1.2 * bmr_result
        elif activity_level == 'light':
