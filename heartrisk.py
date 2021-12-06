@@ -42,18 +42,10 @@ elif option=='CALORIE CALCULATOR':
        height = st.number_input("What is your height in inches: ")
 
        if gender == 'male':
-          c1 = 66
-          hm = 6.2*height
-          wm = 12.7*weight
-          am = 6.76*age
-          bmr_result = float(c1+hm+ wm-am)
+           bmr_result = 66 + (6.2*height) + (12.7*weight) - (6.76*age)
 	
        elif gender == 'female':
-          c1 = 655.1
-          hm = 4.35 * height
-          wm = 4.7 * weight
-          am = 4.7 * age
-	  bmr_result = float(c1+hm+wm-am)
+	   bmr_result = 655.1 + (4.35 * height) + (4.7 * weight) - (4.7 * age)
         #BMR = 665 + (9.6 X 69) + (1.8 x 178) – (4.7 x 27)
        
 
