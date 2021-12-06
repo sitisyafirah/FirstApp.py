@@ -1,78 +1,90 @@
+%%writefile myfirstapp.py
 import streamlit as st
 import numpy as np
 import pandas as pd
-import seaborn as sns
-import matplotlib.pyplot as plt
+import datetime
 
-st.header("Heart Disease Prediction Analysis")
-st.write("In this dataset, there are many cases  with their ASCVDs."
-         
-st.sidebar.header('User Input Features')
+st.header("My first Streamlit App")
+st.title("Let's Count")
+st.write('Before you continue, please read the [terms and conditions](I promise to stay healthy everyday')
+show = st.checkbox('I agree the terms and conditions')
+if show:
+    st.write('Welcome to Lets Count')
 
-st.sidebar.markdown("""
-[Example CSV input file](https://raw.githubusercontent.com/sitisyafirah/FirstApp.py/main/heartRisk.csv)
-""")
+option = st.sidebar.selectbox('Select one symbol', ( 'CALENDAR', 'BMI CALCULATOR','CALORIE CALCULATOR'))
 
-# Collects user input features into dataframe
-uploaded_file = st.sidebar.file_uploader("Upload your input CSV file", type=["csv"])
-if uploaded_file is not None:
-    df = pd.read_csv(uploaded_file, sep = ',')
-    st.table(df)
-else
-    st.write("Please upload again")
-         
-option = st.sidebar.selectbox(
-    'Select count plot'
-     ['Age','Cholestrol','HDL'])
+if option=='CALENDAR':
+    today = datetime.date.today()
+    start_date = st.date_input('Start date', today)
+    st.write(start_date)
 
-if option=='Age':
-    b = sns.displot(x = 'Age', data = df, bins = 40)
-    st.write(" Count vs Age")
-    st.write(b)
+#BMI CALCULATOR
 
-elif option=='Cholestrol'
-    c = sns.displot(x = 'Cholesterol', data = df)
-    st.write(" Count vs Cholestrol")
-    st.write(c)
-  
-elif option=='HDL'
-    d = sns.displot(x = 'HDL', data = df)
-    st.write("Count vs HDL")    
-    st.write(d)  
+elif option=='BMI CALCULATOR':
+      height = st.number_input("Enter your height in cm: ")
+      weight = st.number_input("Enter your weight in kg: "))
+      BMI = weight / (height/100)**2 #height is divided by 100 to convert centimeter to meter
+      st.write('Your BMi is: ',BMI)
+      if BMI <= 18.5:
+    	st.write("You are underweight.")
+		elif BMI <= 24.9:
+    	st.write("You are healthy.")
+		elif BMI <= 29.9:
+    	st.write("You are overweight.")
+		else:
+    	st.write("You are obese.")
+      
+elif option=='CALORIE CALCULATOR':
+    def user_info():
+    	age = st.number_input("What is your age: ")
+    	gender = st.text_input("What is your gender (male/female): ")
+    	weight = st.number_input("What is your weight: ")
+   	height = st.text_input("What is your height in inches: ")
+    
+    if gender == 'male':
+        c1 = 66
+        hm = 6.2 * height
+        wm = 12.7 * weight
+        am = 6.76 * age
+    elif gender == 'female':
+        c1 = 655.1
+        hm = 4.35 * height
+        wm = 4.7 * weight
+        am = 4.7 * age
+        #BMR = 665 + (9.6 X 69) + (1.8 x 178) – (4.7 x 27)
+        bmr_result = c1 + hm + wm - am
+        return(int(bmr_result))
 
-else:
-    st.write(df)
+    def calculate_activity(bmr_result): 
+        activity_level = st.text_input("What is your activity level (none, light, moderate, heavy, or extreme): ")
 
-X = df.drop('Risk', axis = 1)
-y = df['Risk']
-from sklearn.model_selection import train_test_split
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=7))
+    	if activity_level == 'none':
+            activity_level = 1.2 * bmr_result
+    	elif activity_level == 'light':
+            activity_level = 1.375 * bmr_result
+    	elif activity_level == 'moderate':
+            activity_level = 1.55 * bmr_result
+    	elif activity_level == 'heavy':
+            activity_level = 1.725 * bmr_result
+  	elif activity_level == 'extreme':
+            activity_level = 1.9 * bmr_result
 
-option = st.sidebar.selectbox(
-    'Select a classifier',
-     ['Linear Regression','Random Forest'])
+    	return(int(activity_level))
 
-if option=='Linear Regression':
-    from sklearn.linear_model import LinearRegression
-    lr = LinearRegression()
-    lr.fit(X_train, y_train)
-    lr_pred = lr.predict(X_test)
-    lr_mae = mean_absolute_error(y_test, lr_pred)
-    lr_rmse = np.sqrt(mean_squared_error(y_test, lr_pred))
-    st.write("Mean absolute error : ",lr_mae)
-    st.write("Mean squared error", lr_rmse)
+     def gain_or_lose(activity_level):
+    	goals = input('Do you want to lose, maintain, or gain weight: ')
 
+    	if goals == 'lose':
+            calories = activity_level - 500
+    	elif goals == 'maintain':
+            calories = activity_level
+    	elif goals == 'gain':
+            gain = st.text_input("Gain 1 or 2 pounds per week? Enter 1 or 2: ""))
+      	
+        if gain == 1: 
+            calories = activity_level + 500
+        elif gain == 2:
+            calories = activity_level + 1000
 
-elif option=='Random Forest':
-    from sklearn.ensemble import RandomForestRegressor
-    rfr = RandomForestRegressor(n_estimators=200)
-    rfr.fit(X_train, y_train)
-    rfr_pred = rfr.predict(X_test)
-    rfr_mae = mean_absolute_error(y_test, rfr_pred)
-    rfr_rmse = np.sqrt(mean_squared_error(y_test, rfr_pred))
-    st.write("Mean absolute error : ",rfr_mae)
-    st.write("Mean squared error", rfr_rmse)
-
-else:
-     st.write(df)
-        
+       st.write('in order to ', goals, 'weight, your daily caloric goals should be', calories, '!')
+		gain_or_lose(calculate_activity(user_info()))
