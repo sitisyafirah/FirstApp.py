@@ -54,7 +54,7 @@ elif option=='CALORIE CALCULATOR':
        bmr_result = c1 + hm + wm - am
 
     #def calculate_activity(bmr_result): 
-        activity_level = st.text_input("What is your activity level (none, light, moderate, heavy, or extreme): ")
+       activity_level = st.text_input("What is your activity level (none, light, moderate, heavy, or extreme): ")
 
     	if activity_level == 'none':
             activity_level = 1.2 * bmr_result
